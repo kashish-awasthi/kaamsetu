@@ -10,6 +10,9 @@
 
 *KaamSetu* (काम सेतु) means "bridge to work".
 
+**[▶ Live demo](https://kaamsetu-jobs.vercel.app)**: tap *Worker demo* or *Employer demo* on the login page. Data is seeded (50,000 jobs).
+
+
 <p>
   <img src="docs/jobs-mobile.png" width="260" alt="Worker job feed on a phone: search, filters, salary and skill match">
   <img src="docs/applications-hindi.png" width="260" alt="My applications in Hindi, with a status timeline for each application">
@@ -97,6 +100,10 @@ npm test             # API tests use the kaamsetu_test database
 ```
 
 Demo logins (password `demo1234`): worker **9000000001**, employer **9000000002**. The login page has one-tap buttons for both.
+
+## Deployment
+
+The React build and the Express API deploy together on Vercel: `api/index.js` exports the same Express app as a serverless function, and `vercel.json` routes `/api/*` to it and everything else to the React app. The database is Neon (serverless PostgreSQL, Singapore region), migrated and seeded with the same scripts used locally.
 
 ## What I'd add next
 - OTP login by SMS instead of passwords

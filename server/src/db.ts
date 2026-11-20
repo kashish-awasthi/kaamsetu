@@ -6,8 +6,9 @@ pg.types.setTypeParser(pg.types.builtins.INT8, (v) => Number(v))
 
 export const pool = new pg.Pool({
   connectionString: config.databaseUrl,
+  // Serverless functions each hold their own pool, so keep it small.
   max: config.isServerless ? 3 : 10,
-  ssl: config.databaseUrl.includes('sslmode=require') ? { rejectUnauthorized: false } : undefined,
+  // TLS settings come from the connection string (hosted databases use sslmode=require with full certificate checks).
 })
 
 export type Db = Pick<pg.PoolClient, 'query'>

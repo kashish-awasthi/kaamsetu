@@ -203,6 +203,7 @@ form { display: flex; flex-direction: column; gap: 14px; }
 .jobs-table tr.closed td { opacity: 0.55; }
 .jobs-table .num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
 .jobs-table td.zero { color: #c9bfb3; font-weight: 500; }
+.jobs-table td:first-child { min-width: 230px; }
 .job-link { display: block; font-weight: 700; text-decoration: none; }
 .job-link:hover { color: var(--brand-dark); }
 .toggle { min-width: 76px; height: 30px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--surface-2); font-weight: 700; font-size: 0.8rem; cursor: pointer; color: var(--muted); }
